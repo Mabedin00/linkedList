@@ -8,6 +8,7 @@ int main(){
     struct node node0;
     struct node node2;
     struct node node1;
+    struct node startNode;
 
     node0.number = 0;
     node0.next = &node1;
@@ -17,6 +18,10 @@ int main(){
     node2.next = NULL;
     printf("[" );
     print_list(&node0);
+
+    *startNode = insert_front(&node0, 54);
+
+    print_list(startNode);
 
 }
 
