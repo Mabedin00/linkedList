@@ -1,27 +1,34 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "functions.c"
+#include "functions.h"
 
 
 int main(){
-    struct node node0;
-    struct node node2;
-    struct node node1;
-    struct node startNode;
+    printf("Creating empty list: ");
+    struct node* linkedList = NULL;
+    printf("[ ");
+    print_list(linkedList);
+    printf("Adding numbers 0-9 to list...\n");
+    int i;
+    for (i = 0; i < 10; i++){
+        linkedList = insert_front(linkedList, i);
+    }
+    printf("[ ");
+    print_list(linkedList);
+    for (i = 0; i < 10; i++){
+        printf("Removing %d\n", i );
+        linkedList = remove_node(linkedList, i);
+        printf("[ ");
+        print_list(linkedList);
+    }
+    printf("Free list\n");
+    linkedList = free_list(linkedList);
+    printf("Back to empty list:\n" );
+    printf("[ ");
+    print_list(linkedList);
 
-    node0.number = 0;
-    node0.next = &node1;
-    node1.number = 1;
-    node1.next = &node2;
-    node2.number = 2;
-    node2.next = NULL;
-    printf("[" );
-    print_list(&node0);
 
-    *startNode = insert_front(&node0, 54);
-
-    print_list(startNode);
 
 }
 
