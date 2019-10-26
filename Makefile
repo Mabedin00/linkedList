@@ -7,7 +7,7 @@ main.o: main.c functions.h
 functions.o: functions.c functions.h
 	gcc -c functions.c
 run:
-	.\program
+	./program
 
 clean:
 	rm *.o
