@@ -14,6 +14,7 @@ int main(){
     for (i = 0; i < 10; i++){
         linkedList = insert_front(linkedList, i);
     }
+    
     printf("[ ");
     print_list(linkedList);
     for (i = 0; i < 10; i++){

@@ -15,7 +15,7 @@ void print_list(struct node *start){
 
 struct node * insert_front(struct node* oldFirst, int val){
     struct node* newNode = calloc(sizeof(struct node), 1);
-    newNode->next=oldFirst;
+    newNode->next = oldFirst;
     newNode->number = val;
     return newNode;
 }
@@ -43,6 +43,7 @@ struct node * remove_node(struct node *front, int data){
             struct node * freeNode = tempNode->next;
             tempNode->next = tempNode->next->next;
             free(freeNode);
+
             return front;
         }
     }
