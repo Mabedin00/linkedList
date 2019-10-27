@@ -33,6 +33,7 @@ struct node * free_list(struct node * start){
 struct node * remove_node(struct node *front, int data){
     if (front->number == data){
         struct node * output = front->next;
+        free(front);
         return output;
     }
 
@@ -41,6 +42,7 @@ struct node * remove_node(struct node *front, int data){
         if (tempNode->next->number == data) {
             struct node * freeNode = tempNode->next;
             tempNode->next = tempNode->next->next;
+            free(freeNode);
             return front;
         }
     }
